@@ -15,7 +15,7 @@
     border-radius: 1rem;
 }
 
-.pokemon .pokemonNumber {
+.pokemon #pokemonNumber {
     color: black;
     opacity: 0.3;
     text-align: right;
@@ -53,9 +53,7 @@
     transform: scaleX(-1);
 }
 
-.pokemons li:nth-child(1),
-li:nth-child(2),
-li:nth-child(3) {
+.grass{
     background-color: #49d0b0;
 }
 
