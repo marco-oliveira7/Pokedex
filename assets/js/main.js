@@ -1,4 +1,9 @@
 
+const loadMoreButton = document.getElementById("loadMoreButton")
+const pokemonList = document.getElementById('pokemonList')
+let limit = 10
+let offset = 0
+const maxLimit = 151
 
 function convertPokemonToHtml(pokemon) {
     return `
@@ -17,9 +22,25 @@ function convertPokemonToHtml(pokemon) {
 `
 }
 
-const pokemonList = document.getElementById('pokemonList')
-pokeApi.getPokemons().then((pokemons = []) => {
+function loadMorePokemons(offset, limit) {
+    pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
+        // Utilizando o metodo map exemplificado
+        pokemonList.innerHTML = pokemons.map(convertPokemonToHtml).join('')
+    })
+}
 
-    // Utilizando o metodo map exemplificado
-    pokemonList.innerHTML = pokemons.map(convertPokemonToHtml).join('')
+loadMorePokemons(offset, limit)
+
+loadMoreButton.addEventListener('click', function(){
+    limit += 10
+
+    if (limit >= maxLimit) {
+        offset = 0
+        limit = 151
+        loadMorePokemons(offset, limit)
+        loadMoreButton.parentElement.removeChild(loadMoreButton)
+    }
+    else{
+        loadMorePokemons(offset, limit)
+    }
 })

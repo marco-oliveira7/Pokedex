@@ -81,12 +81,11 @@
 
 .pokemon {
     display: flex;
-    flex-flow: column wrap;
-    margin: 0.5rem;
+    flex-flow: column;
+    margin: .5rem;
     padding: 1rem;
-    color: #fff;
     border-radius: 1rem;
-
+    color: #fff;
 }
 
 .pokemon #pokemonNumber {
@@ -103,7 +102,7 @@
 .pokemon .detail {
     display: flex;
     align-items: center;
-    flex-flow: row wrap;
+    flex-flow: row;
     justify-content: space-between;
 }
 
@@ -124,25 +123,25 @@
 }
 
 .pokemon img {
-    max-width: 100%;
+    max-width: 70%;
     height: 70px;
     transform: scaleX(-1);
     transition: all 0.3s;
 }
 
-@media screen and (width < 380px){
+@media screen and (width < 430px){
     .pokemons {
         grid-template-columns: 1fr;
     }
 }
 
-@media screen and (width > 380px) {
+@media screen and (width > 430px) {
     .pokemons {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media screen and (width > 576px) {
+@media screen and (width > 620px) {
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr;
     }

@@ -6,11 +6,16 @@
     padding: 0;
 }
 
+body, html{
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+}
+
 .content {
-    padding: 1rem;
-    background-color: #FFF;
     height: 100vh;
     width: 100vw;
+    padding: 1rem;
+    background-color: #FFF;
 }
 
 .pagination{
@@ -21,17 +26,26 @@
     padding: 1rem 0;
 }
 
-@media screen and (width > 992px) {
-    body, html{
-        background-color: #f1f1f1;
-        overflow-x: hidden;
-    }
+#loadMoreButton{
+    margin-right: 1rem;
+    padding: .25rem;
+    background-color: #6c79db;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    font-size: 0.825rem;
+}
 
+@media screen and (width > 992px) {
     .content {
         max-width: 992px;
         height: auto;
         margin: 1rem auto;
         border-radius: 1rem;
+    }
+
+    .pagination{
+        width: 100%;
     }
 }
 
